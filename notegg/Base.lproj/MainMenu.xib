@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -19,11 +19,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="notegg" id="1Xt-HY-uBw">
+                <menuItem title="Note Egg" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="notegg" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="Note Egg" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About notegg" id="5kV-Vb-QxS">
+                            <menuItem title="About Note Egg" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -37,7 +37,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide notegg" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide Note Egg" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -55,7 +55,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit notegg" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit Note Egg" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -656,7 +656,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="notegg Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="Note Egg Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
@@ -666,14 +666,44 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="notegg" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Note Egg" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="385" y="126" width="860" height="520"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="860" height="520"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qa-b1-QdA">
+                        <rect key="frame" x="0.0" y="0.0" width="860" height="520"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <customView fixedFrame="YES" id="pj6-1b-HKh">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="520"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </customView>
+                            <customView fixedFrame="YES" id="a7x-O2-jkv">
+                                <rect key="frame" x="131" y="0.0" width="194" height="520"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" id="8te-YX-NOk">
+                                <rect key="frame" x="326" y="0.0" width="534" height="520"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3Qa-b1-QdA" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="1dA-vh-6Ju"/>
+                    <constraint firstItem="3Qa-b1-QdA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="gem-5G-BnX"/>
+                    <constraint firstAttribute="trailing" secondItem="3Qa-b1-QdA" secondAttribute="trailing" id="mJ2-PA-Ihl"/>
+                    <constraint firstAttribute="bottom" secondItem="3Qa-b1-QdA" secondAttribute="bottom" id="xQv-Gi-bHg"/>
+                </constraints>
             </view>
         </window>
     </objects>

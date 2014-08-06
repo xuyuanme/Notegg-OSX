@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CDB32AB19920A2600CC9C4D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB32AA19920A2600CC9C4D /* Cocoa.framework */; };
+		1CDB32B519920A2600CC9C4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32B319920A2600CC9C4D /* InfoPlist.strings */; };
+		1CDB32B719920A2600CC9C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB32B619920A2600CC9C4D /* main.m */; };
+		1CDB32BB19920A2600CC9C4D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32B919920A2600CC9C4D /* Credits.rtf */; };
+		1CDB32BE19920A2600CC9C4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB32BD19920A2600CC9C4D /* AppDelegate.m */; };
+		1CDB32C119920A2600CC9C4D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32BF19920A2600CC9C4D /* MainMenu.xib */; };
+		1CDB32C319920A2600CC9C4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32C219920A2600CC9C4D /* Images.xcassets */; };
+		1CDB32CA19920A2700CC9C4D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB32C919920A2700CC9C4D /* XCTest.framework */; };
+		1CDB32CB19920A2700CC9C4D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB32AA19920A2600CC9C4D /* Cocoa.framework */; };
+		1CDB32D319920A2700CC9C4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32D119920A2700CC9C4D /* InfoPlist.strings */; };
+		1CDB32D519920A2700CC9C4D /* noteggTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB32D419920A2700CC9C4D /* noteggTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CDB32CC19920A2700CC9C4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CDB329F19920A2600CC9C4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CDB32A619920A2600CC9C4D;
+			remoteInfo = notegg;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CDB32A719920A2600CC9C4D /* notegg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notegg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDB32AA19920A2600CC9C4D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1CDB32AD19920A2600CC9C4D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1CDB32AE19920A2600CC9C4D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1CDB32AF19920A2600CC9C4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1CDB32B219920A2600CC9C4D /* notegg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notegg-Info.plist"; sourceTree = "<group>"; };
+		1CDB32B419920A2600CC9C4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1CDB32B619920A2600CC9C4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CDB32B819920A2600CC9C4D /* notegg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notegg-Prefix.pch"; sourceTree = "<group>"; };
+		1CDB32BA19920A2600CC9C4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1CDB32BC19920A2600CC9C4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1CDB32BD19920A2600CC9C4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1CDB32C019920A2600CC9C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1CDB32C219920A2600CC9C4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1CDB32C819920A2700CC9C4D /* noteggTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noteggTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDB32C919920A2700CC9C4D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1CDB32D019920A2700CC9C4D /* noteggTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "noteggTests-Info.plist"; sourceTree = "<group>"; };
+		1CDB32D219920A2700CC9C4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1CDB32D419920A2700CC9C4D /* noteggTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = noteggTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CDB32A419920A2600CC9C4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDB32AB19920A2600CC9C4D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDB32C519920A2700CC9C4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDB32CB19920A2700CC9C4D /* Cocoa.framework in Frameworks */,
+				1CDB32CA19920A2700CC9C4D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CDB329E19920A2600CC9C4D = {
+			isa = PBXGroup;
+			children = (
+				1CDB32B019920A2600CC9C4D /* notegg */,
+				1CDB32CE19920A2700CC9C4D /* noteggTests */,
+				1CDB32A919920A2600CC9C4D /* Frameworks */,
+				1CDB32A819920A2600CC9C4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1CDB32A819920A2600CC9C4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32A719920A2600CC9C4D /* notegg.app */,
+				1CDB32C819920A2700CC9C4D /* noteggTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CDB32A919920A2600CC9C4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32AA19920A2600CC9C4D /* Cocoa.framework */,
+				1CDB32C919920A2700CC9C4D /* XCTest.framework */,
+				1CDB32AC19920A2600CC9C4D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CDB32AC19920A2600CC9C4D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32AD19920A2600CC9C4D /* AppKit.framework */,
+				1CDB32AE19920A2600CC9C4D /* CoreData.framework */,
+				1CDB32AF19920A2600CC9C4D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1CDB32B019920A2600CC9C4D /* notegg */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32BC19920A2600CC9C4D /* AppDelegate.h */,
+				1CDB32BD19920A2600CC9C4D /* AppDelegate.m */,
+				1CDB32BF19920A2600CC9C4D /* MainMenu.xib */,
+				1CDB32C219920A2600CC9C4D /* Images.xcassets */,
+				1CDB32B119920A2600CC9C4D /* Supporting Files */,
+			);
+			path = notegg;
+			sourceTree = "<group>";
+		};
+		1CDB32B119920A2600CC9C4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32B219920A2600CC9C4D /* notegg-Info.plist */,
+				1CDB32B319920A2600CC9C4D /* InfoPlist.strings */,
+				1CDB32B619920A2600CC9C4D /* main.m */,
+				1CDB32B819920A2600CC9C4D /* notegg-Prefix.pch */,
+				1CDB32B919920A2600CC9C4D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CDB32CE19920A2700CC9C4D /* noteggTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32D419920A2700CC9C4D /* noteggTests.m */,
+				1CDB32CF19920A2700CC9C4D /* Supporting Files */,
+			);
+			path = noteggTests;
+			sourceTree = "<group>";
+		};
+		1CDB32CF19920A2700CC9C4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB32D019920A2700CC9C4D /* noteggTests-Info.plist */,
+				1CDB32D119920A2700CC9C4D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CDB32A619920A2600CC9C4D /* notegg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CDB32D819920A2700CC9C4D /* Build configuration list for PBXNativeTarget "notegg" */;
+			buildPhases = (
+				1CDB32A319920A2600CC9C4D /* Sources */,
+				1CDB32A419920A2600CC9C4D /* Frameworks */,
+				1CDB32A519920A2600CC9C4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = notegg;
+			productName = notegg;
+			productReference = 1CDB32A719920A2600CC9C4D /* notegg.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1CDB32C719920A2700CC9C4D /* noteggTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CDB32DB19920A2700CC9C4D /* Build configuration list for PBXNativeTarget "noteggTests" */;
+			buildPhases = (
+				1CDB32C419920A2700CC9C4D /* Sources */,
+				1CDB32C519920A2700CC9C4D /* Frameworks */,
+				1CDB32C619920A2700CC9C4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CDB32CD19920A2700CC9C4D /* PBXTargetDependency */,
+			);
+			name = noteggTests;
+			productName = noteggTests;
+			productReference = 1CDB32C819920A2700CC9C4D /* noteggTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CDB329F19920A2600CC9C4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = xuyuanme;
+				TargetAttributes = {
+					1CDB32C719920A2700CC9C4D = {
+						TestTargetID = 1CDB32A619920A2600CC9C4D;
+					};
+				};
+			};
+			buildConfigurationList = 1CDB32A219920A2600CC9C4D /* Build configuration list for PBXProject "notegg" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CDB329E19920A2600CC9C4D;
+			productRefGroup = 1CDB32A819920A2600CC9C4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CDB32A619920A2600CC9C4D /* notegg */,
+				1CDB32C719920A2700CC9C4D /* noteggTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CDB32A519920A2600CC9C4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDB32B519920A2600CC9C4D /* InfoPlist.strings in Resources */,
+				1CDB32C319920A2600CC9C4D /* Images.xcassets in Resources */,
+				1CDB32BB19920A2600CC9C4D /* Credits.rtf in Resources */,
+				1CDB32C119920A2600CC9C4D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDB32C619920A2700CC9C4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDB32D319920A2700CC9C4D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CDB32A319920A2600CC9C4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDB32BE19920A2600CC9C4D /* AppDelegate.m in Sources */,
+				1CDB32B719920A2600CC9C4D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDB32C419920A2700CC9C4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDB32D519920A2700CC9C4D /* noteggTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CDB32CD19920A2700CC9C4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CDB32A619920A2600CC9C4D /* notegg */;
+			targetProxy = 1CDB32CC19920A2700CC9C4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1CDB32B319920A2600CC9C4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CDB32B419920A2600CC9C4D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1CDB32B919920A2600CC9C4D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CDB32BA19920A2600CC9C4D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		1CDB32BF19920A2600CC9C4D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CDB32C019920A2600CC9C4D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		1CDB32D119920A2700CC9C4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CDB32D219920A2700CC9C4D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CDB32D619920A2700CC9C4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1CDB32D719920A2700CC9C4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1CDB32D919920A2700CC9C4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "notegg/notegg-Prefix.pch";
+				INFOPLIST_FILE = "notegg/notegg-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1CDB32DA19920A2700CC9C4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "notegg/notegg-Prefix.pch";
+				INFOPLIST_FILE = "notegg/notegg-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1CDB32DC19920A2700CC9C4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/notegg.app/Contents/MacOS/notegg";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "notegg/notegg-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "noteggTests/noteggTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1CDB32DD19920A2700CC9C4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/notegg.app/Contents/MacOS/notegg";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "notegg/notegg-Prefix.pch";
+				INFOPLIST_FILE = "noteggTests/noteggTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CDB32A219920A2600CC9C4D /* Build configuration list for PBXProject "notegg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDB32D619920A2700CC9C4D /* Debug */,
+				1CDB32D719920A2700CC9C4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CDB32D819920A2700CC9C4D /* Build configuration list for PBXNativeTarget "notegg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDB32D919920A2700CC9C4D /* Debug */,
+				1CDB32DA19920A2700CC9C4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1CDB32DB19920A2700CC9C4D /* Build configuration list for PBXNativeTarget "noteggTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDB32DC19920A2700CC9C4D /* Debug */,
+				1CDB32DD19920A2700CC9C4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CDB329F19920A2600CC9C4D /* Project object */;
+}

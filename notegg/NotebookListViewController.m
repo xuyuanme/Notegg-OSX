@@ -23,4 +23,18 @@
     return self;
 }
 
+- (IBAction)addButtonClicked:(id)sender {
+    DBAccount *linkedAccount = [[DBAccountManager sharedManager] linkedAccount];
+    if (linkedAccount) {
+        NSLog(@"App already linked");
+    } else {
+        [[DBAccountManager sharedManager] linkFromWindow:self.view.window
+                                     withCompletionBlock:^(DBAccount *account) {
+                                         if (account) {
+                                             NSLog(@"App linked successfully!");
+                                         }
+                                     }];
+    }
+}
+
 @end

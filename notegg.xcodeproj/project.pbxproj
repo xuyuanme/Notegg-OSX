@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C86C15919921F7A00A49666 /* NotebookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C15719921F7A00A49666 /* NotebookListViewController.m */; };
 		1C86C15A19921F7A00A49666 /* NotebookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C86C15819921F7A00A49666 /* NotebookListViewController.xib */; };
+		1C86C15C199265D500A49666 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C86C15B199265D500A49666 /* Dropbox.framework */; };
+		1C86C15E199266A000A49666 /* Dropbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1C86C15B199265D500A49666 /* Dropbox.framework */; };
 		1CDB32AB19920A2600CC9C4D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB32AA19920A2600CC9C4D /* Cocoa.framework */; };
 		1CDB32B519920A2600CC9C4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32B319920A2600CC9C4D /* InfoPlist.strings */; };
 		1CDB32B719920A2600CC9C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB32B619920A2600CC9C4D /* main.m */; };
@@ -32,11 +34,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1C86C15D1992668600A49666 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C86C15E199266A000A49666 /* Dropbox.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1C86C15619921F7A00A49666 /* NotebookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookListViewController.h; sourceTree = "<group>"; };
 		1C86C15719921F7A00A49666 /* NotebookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookListViewController.m; sourceTree = "<group>"; };
 		1C86C15819921F7A00A49666 /* NotebookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookListViewController.xib; sourceTree = "<group>"; };
-		1CDB32A719920A2600CC9C4D /* notegg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notegg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C86C15B199265D500A49666 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
+		1CDB32A719920A2600CC9C4D /* Notegg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notegg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDB32AA19920A2600CC9C4D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1CDB32AD19920A2600CC9C4D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1CDB32AE19920A2600CC9C4D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -63,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CDB32AB19920A2600CC9C4D /* Cocoa.framework in Frameworks */,
+				1C86C15C199265D500A49666 /* Dropbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +108,7 @@
 		1CDB32A819920A2600CC9C4D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1CDB32A719920A2600CC9C4D /* notegg.app */,
+				1CDB32A719920A2600CC9C4D /* Notegg.app */,
 				1CDB32C819920A2700CC9C4D /* noteggTests.xctest */,
 			);
 			name = Products;
@@ -100,6 +117,7 @@
 		1CDB32A919920A2600CC9C4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C86C15B199265D500A49666 /* Dropbox.framework */,
 				1CDB32AA19920A2600CC9C4D /* Cocoa.framework */,
 				1CDB32C919920A2700CC9C4D /* XCTest.framework */,
 				1CDB32AC19920A2600CC9C4D /* Other Frameworks */,
@@ -172,6 +190,7 @@
 				1CDB32A319920A2600CC9C4D /* Sources */,
 				1CDB32A419920A2600CC9C4D /* Frameworks */,
 				1CDB32A519920A2600CC9C4D /* Resources */,
+				1C86C15D1992668600A49666 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -179,7 +198,7 @@
 			);
 			name = Notegg;
 			productName = notegg;
-			productReference = 1CDB32A719920A2600CC9C4D /* notegg.app */;
+			productReference = 1CDB32A719920A2600CC9C4D /* Notegg.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1CDB32C719920A2700CC9C4D /* noteggTests */ = {
@@ -396,6 +415,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "notegg/notegg-Prefix.pch";
 				INFOPLIST_FILE = "notegg/notegg-Info.plist";
@@ -409,6 +432,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "notegg/notegg-Prefix.pch";
 				INFOPLIST_FILE = "notegg/notegg-Info.plist";

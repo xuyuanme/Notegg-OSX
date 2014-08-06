@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "NotebookListViewController.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    NotebookListViewController *notebookListViewController = [[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil];
+    [[notebookListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
+    [[notebookListViewController view] setFrame:[[self notebookListView] bounds]];
+    
+    [self.notebookListView addSubview:[notebookListViewController view]];
 }
 
 @end

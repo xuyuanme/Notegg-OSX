@@ -10,6 +10,8 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (weak) IBOutlet NSView *notebookListView;
+
 @property (assign) IBOutlet NSWindow *window;
 
 @end

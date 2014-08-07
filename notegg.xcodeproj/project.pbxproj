@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3BE49519936CE0008DB657 /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3BE49319936CE0008DB657 /* NoteListViewController.m */; };
+		1C3BE49619936CE0008DB657 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3BE49419936CE0008DB657 /* NoteListViewController.xib */; };
 		1C86C15919921F7A00A49666 /* NotebookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C15719921F7A00A49666 /* NotebookListViewController.m */; };
 		1C86C15A19921F7A00A49666 /* NotebookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C86C15819921F7A00A49666 /* NotebookListViewController.xib */; };
 		1C86C15C199265D500A49666 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C86C15B199265D500A49666 /* Dropbox.framework */; };
@@ -50,6 +52,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C3BE49219936CE0008DB657 /* NoteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteListViewController.h; path = ../NoteListViewController.h; sourceTree = "<group>"; };
+		1C3BE49319936CE0008DB657 /* NoteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteListViewController.m; path = ../NoteListViewController.m; sourceTree = "<group>"; };
+		1C3BE49419936CE0008DB657 /* NoteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoteListViewController.xib; path = ../NoteListViewController.xib; sourceTree = "<group>"; };
 		1C86C15619921F7A00A49666 /* NotebookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookListViewController.h; sourceTree = "<group>"; };
 		1C86C15719921F7A00A49666 /* NotebookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookListViewController.m; sourceTree = "<group>"; };
 		1C86C15819921F7A00A49666 /* NotebookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookListViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +159,9 @@
 				1C86C15619921F7A00A49666 /* NotebookListViewController.h */,
 				1C86C15719921F7A00A49666 /* NotebookListViewController.m */,
 				1C86C15819921F7A00A49666 /* NotebookListViewController.xib */,
+				1C3BE49219936CE0008DB657 /* NoteListViewController.h */,
+				1C3BE49319936CE0008DB657 /* NoteListViewController.m */,
+				1C3BE49419936CE0008DB657 /* NoteListViewController.xib */,
 				1CDB32C219920A2600CC9C4D /* Images.xcassets */,
 				1CDB32B119920A2600CC9C4D /* Supporting Files */,
 			);
@@ -269,6 +277,7 @@
 			files = (
 				1CDB32B519920A2600CC9C4D /* InfoPlist.strings in Resources */,
 				1CDB32C319920A2600CC9C4D /* Images.xcassets in Resources */,
+				1C3BE49619936CE0008DB657 /* NoteListViewController.xib in Resources */,
 				1C86C15A19921F7A00A49666 /* NotebookListViewController.xib in Resources */,
 				1CDB32BB19920A2600CC9C4D /* Credits.rtf in Resources */,
 				1CDB32C119920A2600CC9C4D /* MainMenu.xib in Resources */,
@@ -290,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3BE49519936CE0008DB657 /* NoteListViewController.m in Sources */,
 				1C86C16119933F6E00A49666 /* BaseOutlineViewController.m in Sources */,
 				1CDB32BE19920A2600CC9C4D /* AppDelegate.m in Sources */,
 				1C86C15919921F7A00A49666 /* NotebookListViewController.m in Sources */,

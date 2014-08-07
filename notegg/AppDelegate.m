@@ -8,10 +8,12 @@
 
 #import "AppDelegate.h"
 #import "NotebookListViewController.h"
+#import "NoteListViewController.h"
 
 @interface  AppDelegate()
 
 @property (nonatomic,strong) IBOutlet NotebookListViewController *notebookListViewController;
+@property (nonatomic,strong) IBOutlet NoteListViewController *noteListViewController;
 
 @end
 

@@ -16,6 +16,8 @@
                 <outlet property="accountButton" destination="pR2-Mn-HYy" id="5iw-UW-5QZ"/>
                 <outlet property="addButton" destination="m8y-zk-mL5" id="NSD-TM-qeF"/>
                 <outlet property="deleteButton" destination="8av-O8-ek7" id="HRy-P2-3D3"/>
+                <outlet property="noteContentView" destination="8te-YX-NOk" id="g0G-O5-2xG"/>
+                <outlet property="noteListView" destination="a7x-O2-jkv" id="8d8-Tv-KXR"/>
                 <outlet property="notebookListView" destination="mdb-I6-jKd" id="T2q-ac-X87"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>

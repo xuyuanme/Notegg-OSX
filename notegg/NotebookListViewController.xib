@@ -63,7 +63,11 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="5ph-eh-b3f" name="value" keyPath="objectValue.name" id="gBL-Ib-hYx"/>
+                                                            <binding destination="5ph-eh-b3f" name="value" keyPath="objectValue.name" id="U6U-dl-Abi">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSValidatesImmediately" value="YES"/>
+                                                                </dictionary>
+                                                            </binding>
                                                         </connections>
                                                     </textField>
                                                 </subviews>

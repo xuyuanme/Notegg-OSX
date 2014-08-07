@@ -63,7 +63,11 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="egQ-zE-sM4" name="value" keyPath="objectValue.name" id="EMp-xs-ics"/>
+                                                            <binding destination="egQ-zE-sM4" name="value" keyPath="objectValue.name" id="OSm-u7-fFN">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSValidatesImmediately" value="YES"/>
+                                                                </dictionary>
+                                                            </binding>
                                                         </connections>
                                                     </textField>
                                                 </subviews>

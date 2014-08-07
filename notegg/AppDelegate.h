@@ -11,6 +11,9 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (weak) IBOutlet NSView *notebookListView;
+@property (weak) IBOutlet NSButton *accountButton;
+@property (weak) IBOutlet NSButton *addButton;
+@property (weak) IBOutlet NSButton *deleteButton;
 
 @property (assign) IBOutlet NSWindow *window;
 

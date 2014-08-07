@@ -29,4 +29,24 @@
     [self.notebookListView addSubview:[_notebookListViewController view]];
 }
 
+- (IBAction)accountButtonClicked:(id)sender {
+    DBAccount *linkedAccount = [[DBAccountManager sharedManager] linkedAccount];
+    if (linkedAccount && linkedAccount.linked) {
+        NSLog(@"App already linked");
+    } else {
+        [[DBAccountManager sharedManager] linkFromWindow:self.window
+                                     withCompletionBlock:^(DBAccount *account) {
+                                         if (account) {
+                                             NSLog(@"App linked successfully!");
+                                         }
+                                     }];
+    }
+}
+
+- (IBAction)addButtonClicked:(id)sender {
+}
+
+- (IBAction)deleteButtonClicked:(id)sender {
+}
+
 @end

@@ -13,7 +13,10 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="notebookListView" destination="pj6-1b-HKh" id="itt-cz-Iuf"/>
+                <outlet property="accountButton" destination="pR2-Mn-HYy" id="5iw-UW-5QZ"/>
+                <outlet property="addButton" destination="m8y-zk-mL5" id="NSD-TM-qeF"/>
+                <outlet property="deleteButton" destination="8av-O8-ek7" id="HRy-P2-3D3"/>
+                <outlet property="notebookListView" destination="mdb-I6-jKd" id="T2q-ac-X87"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -679,9 +682,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="860" height="520"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <customView fixedFrame="YES" id="pj6-1b-HKh">
+                            <customView id="pj6-1b-HKh">
                                 <rect key="frame" x="0.0" y="0.0" width="130" height="520"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="mdb-I6-jKd">
+                                        <rect key="frame" x="0.0" y="30" width="131" height="490"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="pR2-Mn-HYy">
+                                        <rect key="frame" x="100" y="0.0" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7EI-gJ-HUR"/>
+                                            <constraint firstAttribute="width" constant="30" id="XRh-Qx-shp"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSUser" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DgK-aC-n1g">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="accountButtonClicked:" target="Voe-Tx-rLC" id="Xib-Bd-wLk"/>
+                                        </connections>
+                                    </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="m8y-zk-mL5">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="GV2-uX-tfA"/>
+                                            <constraint firstAttribute="height" constant="30" id="jxK-nc-IG2"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bnt-NY-7n9">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addButtonClicked:" target="Voe-Tx-rLC" id="pIg-gB-0xU"/>
+                                        </connections>
+                                    </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="8av-O8-ek7">
+                                        <rect key="frame" x="29" y="0.0" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="kqf-xd-XWN"/>
+                                            <constraint firstAttribute="height" constant="30" id="svf-kJ-AWB"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YMK-vf-gv3">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="deleteButtonClicked:" target="Voe-Tx-rLC" id="T7W-D6-2YP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8av-O8-ek7" secondAttribute="bottom" id="BID-ru-nc2"/>
+                                    <constraint firstItem="mdb-I6-jKd" firstAttribute="top" secondItem="pj6-1b-HKh" secondAttribute="top" id="Kex-EU-wst"/>
+                                    <constraint firstItem="pR2-Mn-HYy" firstAttribute="top" secondItem="mdb-I6-jKd" secondAttribute="bottom" id="MRt-ea-0cE"/>
+                                    <constraint firstItem="8av-O8-ek7" firstAttribute="leading" secondItem="m8y-zk-mL5" secondAttribute="trailing" constant="-1" id="NQq-FU-mjS"/>
+                                    <constraint firstItem="m8y-zk-mL5" firstAttribute="leading" secondItem="mdb-I6-jKd" secondAttribute="leading" id="Ref-e6-eZg"/>
+                                    <constraint firstItem="mdb-I6-jKd" firstAttribute="centerX" secondItem="pj6-1b-HKh" secondAttribute="centerX" id="aLI-VD-HPq"/>
+                                    <constraint firstAttribute="trailing" secondItem="pR2-Mn-HYy" secondAttribute="trailing" id="dkt-UE-nHW"/>
+                                    <constraint firstItem="mdb-I6-jKd" firstAttribute="leading" secondItem="pj6-1b-HKh" secondAttribute="leading" id="eeG-VP-7J8"/>
+                                    <constraint firstItem="8av-O8-ek7" firstAttribute="top" secondItem="m8y-zk-mL5" secondAttribute="top" id="fZQ-Ye-JUr"/>
+                                    <constraint firstItem="pR2-Mn-HYy" firstAttribute="top" secondItem="8av-O8-ek7" secondAttribute="top" id="o8l-q6-1vc"/>
+                                </constraints>
                             </customView>
                             <customView fixedFrame="YES" id="a7x-O2-jkv">
                                 <rect key="frame" x="131" y="0.0" width="194" height="520"/>
@@ -700,12 +766,17 @@
                     </splitView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3Qa-b1-QdA" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="1dA-vh-6Ju"/>
-                    <constraint firstItem="3Qa-b1-QdA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="gem-5G-BnX"/>
-                    <constraint firstAttribute="trailing" secondItem="3Qa-b1-QdA" secondAttribute="trailing" id="mJ2-PA-Ihl"/>
-                    <constraint firstAttribute="bottom" secondItem="3Qa-b1-QdA" secondAttribute="bottom" id="xQv-Gi-bHg"/>
+                    <constraint firstAttribute="bottom" secondItem="3Qa-b1-QdA" secondAttribute="bottom" id="ktn-C3-Zyj"/>
+                    <constraint firstItem="3Qa-b1-QdA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="o8X-fG-sdQ"/>
+                    <constraint firstItem="3Qa-b1-QdA" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="oJg-Zf-4Kq"/>
+                    <constraint firstAttribute="trailing" secondItem="3Qa-b1-QdA" secondAttribute="trailing" id="yjP-NS-DzL"/>
                 </constraints>
             </view>
         </window>
     </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
+        <image name="NSUser" width="32" height="32"/>
+    </resources>
 </document>

@@ -213,7 +213,7 @@
 
 - (id)initWithData:(DBAccount *)data parent:(NotesNode *)parent outlineViewController:(BaseOutlineViewController *)app {
     if ((self = [super initWithData:data parent:parent outlineViewController:app])) {
-        [self setFilesystem:[[DBFilesystem alloc] initWithAccount:data]];
+        [self setFilesystem:[DBFilesystem sharedFilesystem]];
         __weak NotesAccountNode *weakSelf = self;
         [[self filesystem] addObserver:self forPathAndChildren:[DBPath root] block:^{
             NSLog(@"Node %@: observed changes, reloading", [weakSelf name]);

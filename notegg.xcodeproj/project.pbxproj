@@ -11,6 +11,8 @@
 		1C86C15A19921F7A00A49666 /* NotebookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C86C15819921F7A00A49666 /* NotebookListViewController.xib */; };
 		1C86C15C199265D500A49666 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C86C15B199265D500A49666 /* Dropbox.framework */; };
 		1C86C15E199266A000A49666 /* Dropbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1C86C15B199265D500A49666 /* Dropbox.framework */; };
+		1C86C16119933F6E00A49666 /* BaseOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C16019933F6E00A49666 /* BaseOutlineViewController.m */; };
+		1C86C1641993405600A49666 /* NotesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C1631993405600A49666 /* NotesNode.m */; };
 		1CDB32AB19920A2600CC9C4D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB32AA19920A2600CC9C4D /* Cocoa.framework */; };
 		1CDB32B519920A2600CC9C4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB32B319920A2600CC9C4D /* InfoPlist.strings */; };
 		1CDB32B719920A2600CC9C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB32B619920A2600CC9C4D /* main.m */; };
@@ -52,6 +54,10 @@
 		1C86C15719921F7A00A49666 /* NotebookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookListViewController.m; sourceTree = "<group>"; };
 		1C86C15819921F7A00A49666 /* NotebookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookListViewController.xib; sourceTree = "<group>"; };
 		1C86C15B199265D500A49666 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
+		1C86C15F19933F6E00A49666 /* BaseOutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseOutlineViewController.h; sourceTree = "<group>"; };
+		1C86C16019933F6E00A49666 /* BaseOutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseOutlineViewController.m; sourceTree = "<group>"; };
+		1C86C1621993405600A49666 /* NotesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesNode.h; sourceTree = "<group>"; };
+		1C86C1631993405600A49666 /* NotesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesNode.m; sourceTree = "<group>"; };
 		1CDB32A719920A2600CC9C4D /* Notegg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notegg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDB32AA19920A2600CC9C4D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1CDB32AD19920A2600CC9C4D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -141,6 +147,10 @@
 				1CDB32BC19920A2600CC9C4D /* AppDelegate.h */,
 				1CDB32BD19920A2600CC9C4D /* AppDelegate.m */,
 				1CDB32BF19920A2600CC9C4D /* MainMenu.xib */,
+				1C86C1621993405600A49666 /* NotesNode.h */,
+				1C86C1631993405600A49666 /* NotesNode.m */,
+				1C86C15F19933F6E00A49666 /* BaseOutlineViewController.h */,
+				1C86C16019933F6E00A49666 /* BaseOutlineViewController.m */,
 				1C86C15619921F7A00A49666 /* NotebookListViewController.h */,
 				1C86C15719921F7A00A49666 /* NotebookListViewController.m */,
 				1C86C15819921F7A00A49666 /* NotebookListViewController.xib */,
@@ -280,8 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C86C16119933F6E00A49666 /* BaseOutlineViewController.m in Sources */,
 				1CDB32BE19920A2600CC9C4D /* AppDelegate.m in Sources */,
 				1C86C15919921F7A00A49666 /* NotebookListViewController.m in Sources */,
+				1C86C1641993405600A49666 /* NotesNode.m in Sources */,
 				1CDB32B719920A2600CC9C4D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

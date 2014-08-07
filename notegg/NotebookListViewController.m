@@ -18,7 +18,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        [[self outlineView] registerForDraggedTypes:@[@"com.dropbox.example.notes.node"]];
+        [self setRoot:[NotesNode rootNodeWithDelegate:self]];
+        [[self outlineView] reloadData];
     }
     return self;
 }

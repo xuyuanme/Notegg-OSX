@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BaseOutlineViewController.h"
 
-@interface NotebookListViewController : NSViewController
+@interface NotebookListViewController : BaseOutlineViewController
+
+@property (weak) IBOutlet NSOutlineView *outlineView;
 
 @end

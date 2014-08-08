@@ -28,6 +28,7 @@
             NSLog(@"Initialize DBFilesystem");
             [DBFilesystem setSharedFilesystem:[[DBFilesystem alloc] initWithAccount:account]];
         }
+        [_accountButton setHidden:true];
     }
     
     _notebookListViewController = [[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil];
@@ -49,6 +50,7 @@
                                              // The account is re-linked, so the shared file system needs to be reset again
                                              NSLog(@"Initialize DBFilesystem");
                                              [DBFilesystem setSharedFilesystem:[[DBFilesystem alloc] initWithAccount:account]];
+                                             [_accountButton setHidden:true];
                                          }
                                      }];
     }

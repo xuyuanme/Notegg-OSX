@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C3BE49A1994A446008DB657 /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3BE4981994A446008DB657 /* NoteListViewController.m */; };
 		1C3BE49B1994A446008DB657 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3BE4991994A446008DB657 /* NoteListViewController.xib */; };
+		1C3BE49F1994A4FC008DB657 /* NoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3BE49D1994A4FC008DB657 /* NoteController.m */; };
+		1C3BE4A01994A4FC008DB657 /* NoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3BE49E1994A4FC008DB657 /* NoteController.xib */; };
 		1C86C15919921F7A00A49666 /* NotebookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C15719921F7A00A49666 /* NotebookListViewController.m */; };
 		1C86C15A19921F7A00A49666 /* NotebookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C86C15819921F7A00A49666 /* NotebookListViewController.xib */; };
 		1C86C15C199265D500A49666 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C86C15B199265D500A49666 /* Dropbox.framework */; };
@@ -55,6 +57,9 @@
 		1C3BE4971994A446008DB657 /* NoteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
 		1C3BE4981994A446008DB657 /* NoteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
 		1C3BE4991994A446008DB657 /* NoteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListViewController.xib; sourceTree = "<group>"; };
+		1C3BE49C1994A4FC008DB657 /* NoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteController.h; sourceTree = "<group>"; };
+		1C3BE49D1994A4FC008DB657 /* NoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteController.m; sourceTree = "<group>"; };
+		1C3BE49E1994A4FC008DB657 /* NoteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteController.xib; sourceTree = "<group>"; };
 		1C86C15619921F7A00A49666 /* NotebookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookListViewController.h; sourceTree = "<group>"; };
 		1C86C15719921F7A00A49666 /* NotebookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookListViewController.m; sourceTree = "<group>"; };
 		1C86C15819921F7A00A49666 /* NotebookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookListViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +167,9 @@
 				1C3BE4971994A446008DB657 /* NoteListViewController.h */,
 				1C3BE4981994A446008DB657 /* NoteListViewController.m */,
 				1C3BE4991994A446008DB657 /* NoteListViewController.xib */,
+				1C3BE49C1994A4FC008DB657 /* NoteController.h */,
+				1C3BE49D1994A4FC008DB657 /* NoteController.m */,
+				1C3BE49E1994A4FC008DB657 /* NoteController.xib */,
 				1CDB32C219920A2600CC9C4D /* Images.xcassets */,
 				1CDB32B119920A2600CC9C4D /* Supporting Files */,
 			);
@@ -279,6 +287,7 @@
 				1CDB32C319920A2600CC9C4D /* Images.xcassets in Resources */,
 				1C3BE49B1994A446008DB657 /* NoteListViewController.xib in Resources */,
 				1C86C15A19921F7A00A49666 /* NotebookListViewController.xib in Resources */,
+				1C3BE4A01994A4FC008DB657 /* NoteController.xib in Resources */,
 				1CDB32BB19920A2600CC9C4D /* Credits.rtf in Resources */,
 				1CDB32C119920A2600CC9C4D /* MainMenu.xib in Resources */,
 			);
@@ -301,6 +310,7 @@
 			files = (
 				1C3BE49A1994A446008DB657 /* NoteListViewController.m in Sources */,
 				1C86C16119933F6E00A49666 /* BaseOutlineViewController.m in Sources */,
+				1C3BE49F1994A4FC008DB657 /* NoteController.m in Sources */,
 				1CDB32BE19920A2600CC9C4D /* AppDelegate.m in Sources */,
 				1C86C15919921F7A00A49666 /* NotebookListViewController.m in Sources */,
 				1C86C1641993405600A49666 /* NotesNode.m in Sources */,

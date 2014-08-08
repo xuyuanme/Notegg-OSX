@@ -7,14 +7,22 @@
 //
 
 #import "NoteListViewController.h"
+#import "NoteController.h"
+#import "AppDelegate.h"
 
 @interface NoteListViewController ()
+
+@property (nonatomic, retain) NoteController *contentController;
 
 @end
 
 static NotesNode *rootNode;
 
 @implementation NoteListViewController
+
++ (void)setRootNode:(NotesNode *)node {
+    rootNode = node;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +35,23 @@ static NotesNode *rootNode;
     return self;
 }
 
-+ (void)setRootNode:(NotesNode *)node {
-    rootNode = node;
+# pragma mark - NSOutlineViewDelegate - Selection
+
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification {
+    AppDelegate *app = (AppDelegate *)[[NSApplication sharedApplication] delegate];
+    NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
+    
+    [[self contentController] close];
+    
+    NoteController *controller = [node contentController];
+    if (controller) {
+        [[controller view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
+        [[controller view] setFrame:[[app noteContentView] bounds]];
+        [[app noteContentView] setSubviews:@[[controller view]]];
+    } else {
+        [[app noteContentView] setSubviews:@[]];
+    }
+    [self setContentController:controller];
 }
 
 @end

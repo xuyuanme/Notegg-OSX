@@ -2,6 +2,7 @@
 
 #import "NotesNode.h"
 #import "BaseOutlineViewController.h"
+#import "NoteController.h"
 
 @interface NotesNode()
 
@@ -410,7 +411,7 @@
 
 - (NoteController *)contentController {
     if (![[self data] isFolder]) {
-//        return [[NoteController alloc] initWithFile:[[self filesystem] openFile:[[self data] path] error:nil]];
+        return [[NoteController alloc] initWithFile:[[self filesystem] openFile:[[self data] path] error:nil]];
     }
     return nil;
 }

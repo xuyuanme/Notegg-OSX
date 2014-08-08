@@ -79,7 +79,8 @@
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
     // view is populated via bindings to item's icon and name
     NSTableCellView *cellView = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
-    [[cellView textField] setEditable: [[item parent] parent] == nil ? NO : YES];
+    //[[cellView textField] setEditable: [[item parent] parent] == nil ? NO : YES];
+    [[cellView textField] setEditable: YES];
     return cellView;
 }
 

@@ -34,13 +34,19 @@
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     AppDelegate *app = (AppDelegate *)[[NSApplication sharedApplication] delegate];
     NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
-    // TODO: NoteListViewController initWithNibName is called twice, need fix
-    [NoteListViewController setRootNode:node];
-    _noteListViewController = [[NoteListViewController alloc] initWithNibName:@"NoteListViewController" bundle:nil];
-    [[_noteListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
-    [[_noteListViewController view] setFrame:[[app noteListView] bounds]];
-    
-    [[app noteListView] addSubview:[_noteListViewController view]];
+    if ([[node className] isEqualToString:@"NotesAccountNode"]) {
+        // If the folder is renamed, close other views, so they can be reopened manually
+        [[app noteListView] setSubviews:@[]];
+        [[app noteContentView] setSubviews:@[]];
+    } else {
+        // TODO: NoteListViewController initWithNibName is called twice, need fix
+        [NoteListViewController setRootNode:node];
+        _noteListViewController = [[NoteListViewController alloc] initWithNibName:@"NoteListViewController" bundle:nil];
+        [[_noteListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
+        [[_noteListViewController view] setFrame:[[app noteListView] bounds]];
+        
+        [[app noteListView] setSubviews:@[[_noteListViewController view]]];
+    }
 }
 
 @end

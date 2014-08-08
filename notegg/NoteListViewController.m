@@ -20,10 +20,6 @@ static NotesNode *rootNode;
 
 @implementation NoteListViewController
 
-+ (void)setRootNode:(NotesNode *)node {
-    rootNode = node;
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -53,6 +49,10 @@ static NotesNode *rootNode;
         [[app noteContentView] setSubviews:@[]];
     }
     [self setContentController:controller];
+}
+
++ (void)setRootNode:(NotesNode *)node {
+    rootNode = node;
 }
 
 @end

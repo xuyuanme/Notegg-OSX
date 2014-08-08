@@ -35,7 +35,7 @@
     [[_notebookListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
     [[_notebookListViewController view] setFrame:[[self notebookListView] bounds]];
     
-    [self.notebookListView addSubview:[_notebookListViewController view]];
+    [self.notebookListView setSubviews:@[[_notebookListViewController view]]];
 }
 
 - (IBAction)accountButtonClicked:(id)sender {

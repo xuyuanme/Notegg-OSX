@@ -319,8 +319,12 @@
 - (BOOL)validateName:(id *)ioValue error:(NSError * __autoreleasing *)outError {
     // Didn't want to write validation logic so just do the rename here and see if it fails
     DBError *error = nil;
+    NSString *toPath = *ioValue;
+    if (![[self data] isFolder]) {
+        toPath = [NSString stringWithFormat:@"%@%@", *ioValue, @".txt"];
+    }
     [[self filesystem] movePath:[[self data] path]
-                         toPath:[[[[self data] path] parent] childPath:*ioValue]
+                         toPath:[[[[self data] path] parent] childPath:toPath]
                           error:&error];
     if (error == nil) {
         return YES;

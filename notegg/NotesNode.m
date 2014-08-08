@@ -40,7 +40,9 @@
 
 + (NotesNode *)rootNode:(NotesNode *)rootNode WithDelegate:(BaseOutlineViewController *)outlineViewController {
     if (!rootNode) {
-        return [[NotesAccountManagerNode alloc] initWithData:[DBAccountManager sharedManager] parent:nil outlineViewController:outlineViewController];
+        // Skip account manager, show first linked account
+        // return [[NotesAccountManagerNode alloc] initWithData:[DBAccountManager sharedManager] parent:nil outlineViewController:outlineViewController];
+        return [[NotesAccountNode alloc] initWithData:[[DBAccountManager sharedManager] linkedAccount] parent:nil outlineViewController:outlineViewController];
     } else {
         return [[[rootNode class] alloc] initWithData:[rootNode data] parent:nil outlineViewController:outlineViewController];
     }
@@ -263,7 +265,12 @@
 }
 
 - (NSArray *)fetchChildData {
-    return [[self filesystem] listFolder:[DBPath root] error:nil];
+    // return [[self filesystem] listFolder:[DBPath root] error:nil];
+    NSArray *immContents = [[self filesystem] listFolder:[DBPath root] error:nil];
+    NSMutableArray *mContents = [NSMutableArray arrayWithArray:[immContents filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *bind){
+        return ((DBFileInfo *)obj).isFolder;
+    }]]];
+    return mContents;
 }
 
 @end
@@ -286,7 +293,7 @@
                 [weakSelf reloadChildNodes];
             }];
         }
-        [super setName:[[[[self data] path] stringValue] lastPathComponent]];
+        [super setName:[[[[[self data] path] stringValue] lastPathComponent] stringByDeletingPathExtension]];
         if ([[self data] isFolder]) {
             [self setIcon:[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericFolderIcon)]];
         } else {
@@ -404,7 +411,17 @@
         if ([[self filesystem] fileInfoForPath:[[self data] path] error:nil] == nil) {
             return nil;
         }
-        return [[self filesystem] listFolder:[[self data] path] error:nil];
+        // return [[self filesystem] listFolder:[[self data] path] error:nil];
+        NSArray *immContents = [[self filesystem] listFolder:[[self data] path] error:nil];
+        NSMutableArray *mContents = [NSMutableArray arrayWithArray:[immContents filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *bind){
+            if (((DBFileInfo *)obj).isFolder){ // show file and it's folder
+                return NO;
+            } else if (![[[[((DBFileInfo *) obj) path] name] uppercaseString] hasSuffix:@".TXT"]) { // show file and it's file, but not .txt file
+                return NO;
+            }
+            return YES;
+        }]]];
+        return mContents;
     } else {
         return nil;
     }

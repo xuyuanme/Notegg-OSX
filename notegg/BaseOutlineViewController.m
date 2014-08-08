@@ -41,6 +41,10 @@
     return [self nodeFromItem:item];
 }
 
+- (void)outlineView:(NSOutlineView *)outlineView sortDescriptorsDidChange:(NSArray *)oldDescriptors {
+    NSLog(@"TODO: Need to implement sort");
+}
+
 # pragma mark - NSOutlineViewDataSource - Drag and Drop
 
 - (id<NSPasteboardWriting>)outlineView:(NSOutlineView *)outlineView pasteboardWriterForItem:(id)item {

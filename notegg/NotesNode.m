@@ -292,7 +292,8 @@
         } else {
             [self setIcon:[[NSWorkspace sharedWorkspace] iconForFileType:[[[[[self data] path] stringValue] pathExtension] lowercaseString]]];
         }
-        [self setIsExpandable:[[self data] isFolder]];
+        // [self setIsExpandable:[[self data] isFolder]];
+        [self setIsExpandable:NO];
         NSLog(@"Created node: %@", [self name]);
     }
     return self;

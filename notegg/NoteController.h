@@ -17,6 +17,5 @@
 @property (nonatomic, assign) BOOL doneLoading;
 
 - (id)initWithFile:(DBFile *)file;
-- (void)close;
 
 @end

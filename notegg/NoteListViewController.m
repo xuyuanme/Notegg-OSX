@@ -41,7 +41,8 @@ static NotesNode *rootNode;
     AppDelegate *app = (AppDelegate *)[[NSApplication sharedApplication] delegate];
     NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
     
-    [[self contentController] close];
+    // Use NoteController dealloc instead of calling close
+    // [[self contentController] close];
     
     NoteController *controller = [node contentController];
     if (controller) {

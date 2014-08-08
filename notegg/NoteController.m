@@ -130,7 +130,8 @@
     }
 }
 
-- (void)close {
+- (void)dealloc {
+    NSLog(@"Dealloc NoteController for %@", [[[_file info] path] name]);
     if ([self doneLoading]) {
         [[self file] removeObserver:self];
         if ([self needsSave]) {
@@ -138,8 +139,8 @@
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(syncTextView) object:nil];
             [self syncTextView];
         }
+        [[self file] close];
     }
-    [[self file] close];
 }
 
 @end

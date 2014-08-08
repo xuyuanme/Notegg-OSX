@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NotesNode *root;
 @property (nonatomic, retain) NotesNode *draggedNode;
 
+- (NotesNode *)nodeFromItem:(id)item;
+
 @end

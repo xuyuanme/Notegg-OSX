@@ -8,12 +8,10 @@
 
 #import "AppDelegate.h"
 #import "NotebookListViewController.h"
-#import "NoteListViewController.h"
 
 @interface  AppDelegate()
 
 @property (nonatomic,strong) IBOutlet NotebookListViewController *notebookListViewController;
-@property (nonatomic,strong) IBOutlet NoteListViewController *noteListViewController;
 
 @end
 
@@ -37,12 +35,6 @@
     [[_notebookListViewController view] setFrame:[[self notebookListView] bounds]];
     
     [self.notebookListView addSubview:[_notebookListViewController view]];
-    
-    _noteListViewController = [[NoteListViewController alloc] initWithNibName:@"NoteListViewController" bundle:nil];
-    [[_noteListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
-    [[_noteListViewController view] setFrame:[[self noteListView] bounds]];
-    
-    [self.noteListView addSubview:[_noteListViewController view]];
 }
 
 - (IBAction)accountButtonClicked:(id)sender {

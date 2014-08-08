@@ -47,7 +47,7 @@
     [self setDraggedNode:item];
     
     NSPasteboardItem *pasteBoardItem = [[NSPasteboardItem alloc] init];
-    [pasteBoardItem setData:[NSData data] forType:@"com.dropbox.example.notes.node"];
+    [pasteBoardItem setData:[NSData data] forType:@"me.xuyuan.notegg.notes.node"];
     return pasteBoardItem;
 }
 
@@ -77,23 +77,6 @@
     NSTableCellView *cellView = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
     [[cellView textField] setEditable: [[item parent] parent] == nil ? NO : YES];
     return cellView;
-}
-
-# pragma mark - NSOutlineViewDelegate - Selection
-
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification {
-//    [[self contentController] close];
-//    
-//    NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
-//    NoteController *controller = [node contentController];
-//    if (controller) {
-//        [[controller view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
-//        [[controller view] setFrame:[[self contentView] bounds]];
-//        [[self contentView] setSubviews:@[[controller view]]];
-//    } else {
-//        [[self contentView] setSubviews:@[]];
-//    }
-//    [self setContentController:controller];
 }
 
 # pragma mark - Helpers

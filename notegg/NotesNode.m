@@ -37,8 +37,12 @@
 
 @implementation NotesNode
 
-+ (NotesNode *)rootNodeWithDelegate:(BaseOutlineViewController *)outlineViewController {
-    return [[NotesAccountManagerNode alloc] initWithData:[DBAccountManager sharedManager] parent:nil outlineViewController:outlineViewController];
++ (NotesNode *)rootNode:(NotesNode *)rootNode WithDelegate:(BaseOutlineViewController *)outlineViewController {
+    if (!rootNode) {
+        return [[NotesAccountManagerNode alloc] initWithData:[DBAccountManager sharedManager] parent:nil outlineViewController:outlineViewController];
+    } else {
+        return [[[rootNode class] alloc] initWithData:[rootNode data] parent:nil outlineViewController:outlineViewController];
+    }
 }
 
 - (id)init {
@@ -268,7 +272,12 @@
 
 - (id)initWithData:(DBFileInfo *)data parent:(NotesNode *)parent outlineViewController:(BaseOutlineViewController *)app {
     if ((self = [super initWithData:data parent:parent outlineViewController:app])) {
-        [self setFilesystem:[(id)parent filesystem]];
+        if ([(id)parent filesystem]) {
+            [self setFilesystem:[(id)parent filesystem]];
+        } else {
+            [self setFilesystem:[DBFilesystem sharedFilesystem]];
+        }
+        
         if ([data isFolder]) {
             __weak NotesFileNode *weakSelf = self;
             [[self filesystem] addObserver:self forPathAndChildren:[data path] block:^{

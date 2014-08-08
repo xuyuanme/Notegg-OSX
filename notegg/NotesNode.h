@@ -7,7 +7,7 @@
 
 @interface NotesNode : NSObject
 
-+ (NotesNode *)rootNodeWithDelegate:(BaseOutlineViewController *)outlineViewController;
++ (NotesNode *)rootNode:(NotesNode *)node WithDelegate:(BaseOutlineViewController *)outlineViewController;
 
 // Properties needed by NSOutlineView to draw the outline item
 @property (nonatomic, assign) BOOL isExpandable;

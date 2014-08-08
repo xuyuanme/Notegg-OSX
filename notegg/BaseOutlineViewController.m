@@ -57,7 +57,8 @@
 
 - (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id<NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index {
     if ([self draggedNode] && [[self draggedNode] canMoveToIndex:index inParent:[self nodeFromItem:item]]) {
-        return NSDragOperationMove;
+        // TODO: Implement drag and drop later
+        // return NSDragOperationMove;
     }
     return NSDragOperationNone;
 }

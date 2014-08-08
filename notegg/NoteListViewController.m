@@ -24,11 +24,14 @@ static NotesNode *rootNode;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [[self outlineView] registerForDraggedTypes:@[@"me.xuyuan.notegg.notes.node"]];
         [self setRoot:[NotesNode rootNode:rootNode WithDelegate:self]];
         [[self outlineView] reloadData];
     }
     return self;
+}
+
+-(void)awakeFromNib {
+    [[self outlineView] registerForDraggedTypes:@[@"me.xuyuan.notegg.notes.node"]];
 }
 
 # pragma mark - NSOutlineViewDelegate - Selection

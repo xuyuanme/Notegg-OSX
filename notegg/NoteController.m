@@ -45,7 +45,7 @@
                     }
 
                     // Update title. TODO: if the filename actually changed we should reselect the correct node in outline
-                    [[weakSelf fileNameLabel] setStringValue:[[[[weakSelf file] info] path] stringValue]];
+                    [[weakSelf fileNameLabel] setStringValue:[[[[[weakSelf file] info] path] name] stringByDeletingPathExtension]];
 
                     // Update contents to newer version if ready
                     if ([[[weakSelf file] newerStatus] cached]) {
@@ -55,7 +55,7 @@
                 }];
 
                 // Initial load of file contents
-                [[self fileNameLabel] setStringValue:[[[[self file] info] path] stringValue]];
+                [[self fileNameLabel] setStringValue:[[[[[self file] info] path] name] stringByDeletingPathExtension]];
                 [self setNeedsSave:NO];
                 [[self savedLabel] setHidden:NO];
                 [[self loadingSpinner] setHidden:YES];

@@ -7,12 +7,9 @@
 //
 
 #import "NotebookListViewController.h"
-#import "NoteListViewController.h"
 #import "AppDelegate.h"
 
 @interface NotebookListViewController ()
-
-@property (nonatomic,strong) IBOutlet NoteListViewController *noteListViewController;
 
 @end
 
@@ -39,14 +36,10 @@
     NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
     if ([[node className] isEqualToString:@"NotesAccountNode"]) {
         // If the folder is renamed, close other views, so they can be reopened manually
-        [[app noteListView] setSubviews:@[]];
-        [[app noteContentView] setSubviews:@[]];
+        [app setNoteListViewController:nil];
+        [app setNoteController:nil];
     } else {
-        _noteListViewController = [[NoteListViewController alloc] initWithNode:node];
-        [[_noteListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
-        [[_noteListViewController view] setFrame:[[app noteListView] bounds]];
-        
-        [[app noteListView] setSubviews:@[[_noteListViewController view]]];
+        [app setNoteListViewController:[[NoteListViewController alloc] initWithNode:node]];
     }
 }
 

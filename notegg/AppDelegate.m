@@ -7,11 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "NotebookListViewController.h"
 
 @interface  AppDelegate()
-
-@property (nonatomic,strong) IBOutlet NotebookListViewController *notebookListViewController;
 
 @end
 
@@ -31,11 +28,22 @@
         [_accountButton setHidden:true];
     }
     
-    _notebookListViewController = [[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil];
-    [[_notebookListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
-    [[_notebookListViewController view] setFrame:[[self notebookListView] bounds]];
-    
-    [self.notebookListView setSubviews:@[[_notebookListViewController view]]];
+    [self setNotebookListViewController:[[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil]];
+}
+
+- (void)setNotebookListViewController:(NotebookListViewController *)notebookListViewController {
+    _notebookListViewController = notebookListViewController;
+    [self setController:_notebookListViewController withView:_notebookListView];
+}
+
+- (void)setNoteListViewController:(NoteListViewController *)noteListViewController {
+    _noteListViewController = noteListViewController;
+    [self setController:_noteListViewController withView:_noteListView];
+}
+
+- (void)setNoteController:(NoteController *)noteController {
+    _noteController = noteController;
+    [self setController:_noteController withView:_noteContentView];
 }
 
 - (IBAction)accountButtonClicked:(id)sender {
@@ -60,6 +68,18 @@
 }
 
 - (IBAction)deleteButtonClicked:(id)sender {
+}
+
+# pragma mark private methods
+
+- (void) setController:(NSViewController *)controller withView:(NSView *)view {
+    if (controller) {
+        [[controller view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
+        [[controller view] setFrame:[view bounds]];
+        [view setSubviews:@[[controller view]]];
+    } else {
+        [view setSubviews:@[]];
+    }
 }
 
 @end

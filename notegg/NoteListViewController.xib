@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NoteListViewController">
             <connections>
+                <outlet property="outlineView" destination="iTW-OA-oV7" id="w79-NQ-M2U"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -80,8 +81,8 @@
                                     </tableColumn>
                                 </tableColumns>
                                 <connections>
-                                    <outlet property="dataSource" destination="pMv-og-QNL" id="UUa-mY-F69"/>
-                                    <outlet property="delegate" destination="pMv-og-QNL" id="yP4-hy-SLY"/>
+                                    <outlet property="dataSource" destination="-2" id="LFd-E9-691"/>
+                                    <outlet property="delegate" destination="-2" id="Tn9-Ig-8SK"/>
                                 </connections>
                             </outlineView>
                         </subviews>
@@ -104,11 +105,6 @@
                 <constraint firstItem="czI-gw-XVe" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="qn5-OA-HXA"/>
             </constraints>
         </customView>
-        <customObject id="pMv-og-QNL" customClass="NoteListViewController">
-            <connections>
-                <outlet property="outlineView" destination="iTW-OA-oV7" id="EVl-zj-umb"/>
-            </connections>
-        </customObject>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

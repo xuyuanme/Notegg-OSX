@@ -42,9 +42,7 @@
         [[app noteListView] setSubviews:@[]];
         [[app noteContentView] setSubviews:@[]];
     } else {
-        // TODO: NoteListViewController initWithNibName is called twice, need fix
-        [NoteListViewController setRootNode:node];
-        _noteListViewController = [[NoteListViewController alloc] initWithNibName:@"NoteListViewController" bundle:nil];
+        _noteListViewController = [[NoteListViewController alloc] initWithNode:node];
         [[_noteListViewController view] setAutoresizingMask:(NSViewWidthSizable|NSViewHeightSizable)];
         [[_noteListViewController view] setFrame:[[app noteListView] bounds]];
         

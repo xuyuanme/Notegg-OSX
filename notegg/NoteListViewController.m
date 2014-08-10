@@ -16,13 +16,16 @@
 
 @end
 
-static NotesNode *rootNode;
-
 @implementation NoteListViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    NSAssert(NO, @"Call -initWithNode: instead");
+    return nil;
+}
+
+- (id)initWithNode:(NotesNode *)rootNode {
+    self = [super initWithNibName:@"NoteListViewController" bundle:nil];
     if (self) {
         [self setRoot:[NotesNode rootNode:rootNode WithDelegate:self]];
         [[self outlineView] reloadData];
@@ -52,10 +55,6 @@ static NotesNode *rootNode;
         [[app noteContentView] setSubviews:@[]];
     }
     [self setContentController:controller];
-}
-
-+ (void)setRootNode:(NotesNode *)node {
-    rootNode = node;
 }
 
 @end

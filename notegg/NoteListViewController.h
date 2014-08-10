@@ -12,6 +12,6 @@
 
 @property (weak) IBOutlet NSOutlineView *outlineView;
 
-+ (void)setRootNode:(NotesNode *)node;
+- (id)initWithNode:(NotesNode *)rootNode;
 
 @end

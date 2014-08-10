@@ -65,9 +65,42 @@
 }
 
 - (IBAction)addButtonClicked:(id)sender {
+    NotesNode *notebookNode = [[_notebookListViewController outlineView] itemAtRow:[[_notebookListViewController outlineView] selectedRow]];
+    NSLog(@"Selected notebook %@", [notebookNode name]);
+    
+    if (notebookNode) {
+        [notebookNode addChild];
+    } else {
+        [self promptAndCreateNotebook:[DBPath root] inFilesystem:[DBFilesystem sharedFilesystem]];
+    }
 }
 
 - (IBAction)deleteButtonClicked:(id)sender {
+    NotesNode *notebookNode = [[_notebookListViewController outlineView] itemAtRow:[[_notebookListViewController outlineView] selectedRow]];
+    NotesNode *noteNode = [[_noteListViewController outlineView] itemAtRow:[[_noteListViewController outlineView] selectedRow]];
+    NSLog(@"Selected notebook and note: %@, %@", [notebookNode name], [noteNode name]);
+
+    if (noteNode) {
+        NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:@"%@%@%@", @"Delete the note ", noteNode.name, @"?"]
+                                         defaultButton:@"OK" alternateButton:@"Cancel"
+                                           otherButton:nil informativeTextWithFormat:
+                          @"Deleted note can be restored in Dropbox website"];
+        
+        if ([alert runModal] == NSAlertDefaultReturn) {
+            // OK clicked, delete the record
+            [noteNode remove];
+        }
+    } else if (notebookNode) {
+        NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:@"%@%@%@", @"Delete the notebook ", notebookNode.name, @"?"]
+                                         defaultButton:@"OK" alternateButton:@"Cancel"
+                                           otherButton:nil informativeTextWithFormat:
+                          @"Deleted notebook can be restored in Dropbox website"];
+        
+        if ([alert runModal] == NSAlertDefaultReturn) {
+            // OK clicked, delete the record
+            [notebookNode remove];
+        }
+    }
 }
 
 # pragma mark private methods
@@ -79,6 +112,22 @@
         [view setSubviews:@[[controller view]]];
     } else {
         [view setSubviews:@[]];
+    }
+}
+
+- (void)promptAndCreateNotebook:(DBPath *)parentPath inFilesystem:(DBFilesystem *)filesystem {
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Enter name:"
+                                     defaultButton:@"Create new notebook"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@""];
+    NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 400, 24)];
+    [alert setAccessoryView:input];
+    NSInteger ret = [alert runModal];
+    if (ret == NSAlertDefaultReturn) {
+        if ([[input stringValue] length]) {
+            [filesystem createFolder:[parentPath childPath:[input stringValue]] error:nil];
+        }
     }
 }
 

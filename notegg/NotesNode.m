@@ -157,9 +157,9 @@
 
 + (void)promptForFileNameAndCreateUnderParent:(DBPath *)parentPath inFilesystem:(DBFilesystem *)filesystem {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Enter name:"
-                                     defaultButton:@"Add file"
+                                     defaultButton:@"Add note"
                                    alternateButton:@"Cancel"
-                                       otherButton:@"Add folder"
+                                       otherButton:@"Create new notebook"
                          informativeTextWithFormat:@""];
     NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 400, 24)];
     [alert setAccessoryView:input];
@@ -169,6 +169,7 @@
             [filesystem createFile:[parentPath childPath:[NSString stringWithFormat:@"%@.txt", [input stringValue]]] error:nil];
         }
     } else if (ret == NSAlertOtherReturn) {
+        parentPath = [DBPath root]; // Only create notebook under root
         [filesystem createFolder:[parentPath childPath:[input stringValue]] error:nil];
     }
 }

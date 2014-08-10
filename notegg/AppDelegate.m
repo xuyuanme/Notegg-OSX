@@ -31,6 +31,13 @@
     [self setNotebookListViewController:[[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil]];
 }
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+    if (!flag){
+        [[self window] makeKeyAndOrderFront:self];
+    }
+    return YES;
+}
+
 - (void)setNotebookListViewController:(NotebookListViewController *)notebookListViewController {
     _notebookListViewController = notebookListViewController;
     [self setController:_notebookListViewController withView:_notebookListView];

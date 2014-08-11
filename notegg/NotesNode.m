@@ -97,6 +97,14 @@
     return @[];
 }
 
+NSInteger sortNodes(id obj1, id obj2, void *ctx) {
+    if ([obj1 isKindOfClass:[NotesNode class]] && [obj2 isKindOfClass:[NotesNode class]]) {
+        return [[obj1 name] compare:[obj2 name]];
+    } else {
+        return 0;
+    }
+}
+
 - (void)reloadChildNodes {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         // Fetch the current child data
@@ -106,47 +114,56 @@
         }
 
         dispatch_sync(dispatch_get_main_queue(), ^{
-            // Create a dictionary from their identifier to the data.
-            NSMutableDictionary *dataById = [[NSMutableDictionary alloc] init];
-            for (id data in childData) {
-                dataById[[self keyForChildData:data]] = data;
-            }
-
-            // newChildNodes will be what we replace childNodes with
             NSMutableArray *newChildNodes = [[NSMutableArray alloc] init];
-
-            // Figure out what we need to remove in the current childNodes
-            NSMutableIndexSet *removeIndices = [[NSMutableIndexSet alloc] init];
-            for (NSUInteger i = 0; i < _childNodes.count; i++) {
-                NotesNode *node = _childNodes[i];
-                id key = [self keyForChildData:[node data]];
-                if (dataById[key]) {
-                    [newChildNodes addObject:node];
-                    [dataById removeObjectForKey:key]; // remove so we don't process it again later
-                } else {
-                    [removeIndices addIndex:i];
-                }
-            }
-
-            // The remaining entries in dataById are new so create new nodes for them
-            NSMutableIndexSet *insertIndices = [[NSMutableIndexSet alloc] init];
-            [dataById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                NotesNode *node = [[[self childNodeClass] alloc] initWithData:obj parent:self outlineViewController:[self outlineViewController]];
-                [insertIndices addIndex:[newChildNodes count]];
+            for (id data in childData) {
+                NotesNode *node = [[[self childNodeClass] alloc] initWithData:data parent:self outlineViewController:[self outlineViewController]];
                 [newChildNodes addObject:node];
-            }];
-
-            // If there were actual changes, set the new childNodes and apply the changes to the outline view
-            if ([removeIndices count] || [insertIndices count]) {
-                [self setChildNodes:newChildNodes];
-                NSLog(@"Node %@: done reload. %lu removed, %lu added. now has %lu children", [self name], [removeIndices count], [insertIndices count], [[self childNodes] count]);
-
-                id outlineItem = [self parent] == nil ? nil : self; // root is represented by nil in the outline view (rather than NotesAccountManagerNode)
-                [[[self outlineViewController] outlineView] removeItemsAtIndexes:removeIndices inParent:outlineItem withAnimation:NSTableViewAnimationEffectFade];
-                [[[self outlineViewController] outlineView] insertItemsAtIndexes:insertIndices inParent:outlineItem withAnimation:NSTableViewAnimationEffectFade];
-            } else {
-                NSLog(@"Node %@: done reload. no changes to children.", [self name]);
             }
+            [newChildNodes sortUsingFunction:sortNodes context:NULL];
+            [self setChildNodes:newChildNodes];
+            [[[self outlineViewController] outlineView] reloadData];
+            
+//            // Create a dictionary from their identifier to the data.
+//            NSMutableDictionary *dataById = [[NSMutableDictionary alloc] init];
+//            for (id data in childData) {
+//                dataById[[self keyForChildData:data]] = data;
+//            }
+//
+//            // newChildNodes will be what we replace childNodes with
+//            NSMutableArray *newChildNodes = [[NSMutableArray alloc] init];
+//
+//            // Figure out what we need to remove in the current childNodes
+//            NSMutableIndexSet *removeIndices = [[NSMutableIndexSet alloc] init];
+//            for (NSUInteger i = 0; i < _childNodes.count; i++) {
+//                NotesNode *node = _childNodes[i];
+//                id key = [self keyForChildData:[node data]];
+//                if (dataById[key]) {
+//                    [newChildNodes addObject:node];
+//                    [dataById removeObjectForKey:key]; // remove so we don't process it again later
+//                } else {
+//                    [removeIndices addIndex:i];
+//                }
+//            }
+//
+//            // The remaining entries in dataById are new so create new nodes for them
+//            NSMutableIndexSet *insertIndices = [[NSMutableIndexSet alloc] init];
+//            [dataById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//                NotesNode *node = [[[self childNodeClass] alloc] initWithData:obj parent:self outlineViewController:[self outlineViewController]];
+//                [insertIndices addIndex:[newChildNodes count]];
+//                [newChildNodes addObject:node];
+//            }];
+//
+//            // If there were actual changes, set the new childNodes and apply the changes to the outline view
+//            if ([removeIndices count] || [insertIndices count]) {
+//                [self setChildNodes:newChildNodes];
+//                NSLog(@"Node %@: done reload. %lu removed, %lu added. now has %lu children", [self name], [removeIndices count], [insertIndices count], [[self childNodes] count]);
+//
+//                id outlineItem = [self parent] == nil ? nil : self; // root is represented by nil in the outline view (rather than NotesAccountManagerNode)
+//                [[[self outlineViewController] outlineView] removeItemsAtIndexes:removeIndices inParent:outlineItem withAnimation:NSTableViewAnimationEffectFade];
+//                [[[self outlineViewController] outlineView] insertItemsAtIndexes:insertIndices inParent:outlineItem withAnimation:NSTableViewAnimationEffectFade];
+//            } else {
+//                NSLog(@"Node %@: done reload. no changes to children.", [self name]);
+//            }
         });
     });
 }

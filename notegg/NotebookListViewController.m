@@ -40,6 +40,7 @@
         [app setNoteController:nil];
     } else {
         [app setNoteListViewController:[[NoteListViewController alloc] initWithNode:node]];
+        [app setNoteController:nil];
     }
 }
 

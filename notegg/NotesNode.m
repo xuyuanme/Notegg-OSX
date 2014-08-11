@@ -97,6 +97,16 @@
     return @[];
 }
 
+NSInteger sortFileInfos(id obj1, id obj2, void *ctx) {
+    if ([obj1 isKindOfClass:[DBFileInfo class]] && [obj2 isKindOfClass:[DBFileInfo class]]) {
+        DBPath *path1 = [(DBFileInfo*)obj1 path];
+        DBPath *path2 = [(DBFileInfo*)obj2 path];
+        return [[path1 name] compare:[path2 name]];
+    } else {
+        return 0;
+    }
+}
+
 - (void)reloadChildNodes {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         // Fetch the current child data
@@ -130,11 +140,19 @@
 
             // The remaining entries in dataById are new so create new nodes for them
             NSMutableIndexSet *insertIndices = [[NSMutableIndexSet alloc] init];
-            [dataById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//            [dataById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//                NotesNode *node = [[[self childNodeClass] alloc] initWithData:obj parent:self outlineViewController:[self outlineViewController]];
+//                [insertIndices addIndex:[newChildNodes count]];
+//                [newChildNodes addObject:node];
+//            }];
+            
+            NSMutableArray *toBeInsertedArray = [NSMutableArray arrayWithArray:[dataById allValues]];
+            [toBeInsertedArray sortUsingFunction:sortFileInfos context:NULL];
+            for (id obj in toBeInsertedArray) {
                 NotesNode *node = [[[self childNodeClass] alloc] initWithData:obj parent:self outlineViewController:[self outlineViewController]];
                 [insertIndices addIndex:[newChildNodes count]];
                 [newChildNodes addObject:node];
-            }];
+            }
 
             // If there were actual changes, set the new childNodes and apply the changes to the outline view
             if ([removeIndices count] || [insertIndices count]) {

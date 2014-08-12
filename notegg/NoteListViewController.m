@@ -38,12 +38,19 @@
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     AppDelegate *app = (AppDelegate *)[[NSApplication sharedApplication] delegate];
-    NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
-    
-    // Use NoteController dealloc instead of calling close
-    // [[self contentController] close];
-
-    [app setNoteController:[node contentController]];
+    if (![[DBAccountManager sharedManager] linkedAccount]) {
+        [app setNotebookListViewController:nil];
+        [app setNoteListViewController:nil];
+        [app setNoteController:nil];
+        [[app accountButton] setHidden:false];
+    } else {
+        NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
+        
+        // Use NoteController dealloc instead of calling close
+        // [[self contentController] close];
+        
+        [app setNoteController:[node contentController]];
+    }
 }
 
 @end

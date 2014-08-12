@@ -1,6 +1,7 @@
 //  Copyright (c) 2013 Dropbox, Inc. All rights reserved.
 
 #import "NoteController.h"
+#import "AppDelegate.h"
 
 @implementation NoteController
 
@@ -81,11 +82,20 @@
     if (![self doneLoading]) {
         return;
     }
-    // Save contents 500ms after typing has stopped
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(syncTextView) object:nil];
-    [self performSelector:@selector(syncTextView) withObject:nil afterDelay:.5];
-    [self setNeedsSave:YES];
-    [[self savedLabel] setHidden:YES];
+
+    if (![[DBAccountManager sharedManager] linkedAccount]) {
+        AppDelegate *app = (AppDelegate *)[[NSApplication sharedApplication] delegate];
+        [app setNotebookListViewController:nil];
+        [app setNoteListViewController:nil];
+        [app setNoteController:nil];
+        [[app accountButton] setHidden:false];
+    } else {
+        // Save contents 500ms after typing has stopped
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(syncTextView) object:nil];
+        [self performSelector:@selector(syncTextView) withObject:nil afterDelay:.5];
+        [self setNeedsSave:YES];
+        [[self savedLabel] setHidden:YES];
+    }
 }
 
 # pragma mark - Helpers

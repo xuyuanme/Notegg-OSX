@@ -33,14 +33,21 @@
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     AppDelegate *app = (AppDelegate *)[[NSApplication sharedApplication] delegate];
-    NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
-    if ([[node className] isEqualToString:@"NotesAccountNode"]) {
-        // If the folder is renamed, close other views, so they can be reopened manually
+    if (![[DBAccountManager sharedManager] linkedAccount]) {
+        [app setNotebookListViewController:nil];
         [app setNoteListViewController:nil];
         [app setNoteController:nil];
+        [[app accountButton] setHidden:false];
     } else {
-        [app setNoteListViewController:[[NoteListViewController alloc] initWithNode:node]];
-        [app setNoteController:nil];
+        NotesNode *node = [self nodeFromItem:[[self outlineView] itemAtRow:[[self outlineView] selectedRow]]];
+        if ([[node className] isEqualToString:@"NotesAccountNode"]) {
+            // If the folder is renamed, close other views, so they can be reopened manually
+            [app setNoteListViewController:nil];
+            [app setNoteController:nil];
+        } else {
+            [app setNoteListViewController:[[NoteListViewController alloc] initWithNode:node]];
+            [app setNoteController:nil];
+        }
     }
 }
 

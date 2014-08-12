@@ -25,10 +25,27 @@
             NSLog(@"Initialize DBFilesystem");
             [DBFilesystem setSharedFilesystem:[[DBFilesystem alloc] initWithAccount:account]];
         }
+        __weak DBAccount *weakAccount = account;
+        [account addObserver:self block:^{
+            if (![weakAccount isLinked]) {
+                [self setNotebookListViewController:nil];
+                [self setNoteListViewController:nil];
+                [self setNoteController:nil];
+                [_accountButton setHidden:false];
+            }
+        }];
         [_accountButton setHidden:true];
     }
     
     [self setNotebookListViewController:[[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil]];
+}
+
+- (void)dealloc {
+    NSLog(@"Dealloc AppDelegate");
+    DBAccount *account = [[DBAccountManager sharedManager] linkedAccount];
+    if (account) {
+        [account removeObserver:self];
+    }
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
@@ -66,6 +83,7 @@
                                              NSLog(@"Initialize DBFilesystem");
                                              [DBFilesystem setSharedFilesystem:[[DBFilesystem alloc] initWithAccount:account]];
                                              [_accountButton setHidden:true];
+                                             [self setNotebookListViewController:[[NotebookListViewController alloc] initWithNibName:@"NotebookListViewController" bundle:nil]];
                                          }
                                      }];
     }
